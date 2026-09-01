@@ -1,7 +1,8 @@
 
-
+import getweather from './weatherapi.js';
 
 function App() {
+
   return (
 
     <div>
