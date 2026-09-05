@@ -19,3 +19,5 @@ Jeg har planlagt å lage en værside som heter WeatheringWaves som henter data f
 API valg: I valgte MET Norway Locationforecast API fordi den gir data om være som kan bli brukt i min app.
 
 - API testing
+
+##
