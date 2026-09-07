@@ -1,6 +1,7 @@
 
 import { getWeather } from './weatherapi.js';
 import { useEffect, useState } from 'react';
+import Arrow from './components/arrow.jsx';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -19,36 +20,41 @@ function App() {
 
     <div>
         <h1>WeatheringWaves</h1>
-        <h2>{location}</h2>
+        <h1 className="undertext">Check your weather</h1>
 
-      {weatherData ? (
-      <>
-         <p>Temperature:{" "}
-        {weatherData.properties.timeseries[0].data.instant.details.air_temperature}
-        °C
-        </p> 
+        <div className="location-box">
+          <h2>{location}</h2>
 
-        <p> Humidity:{" "}
-        {weatherData.properties.timeseries[0].data.instant.details.relative_humidity}
-        %
-        </p>
+        {weatherData ? (
+        <>
+          <p>Temperature:{" "}
+          {details?.air_temperature}
+          °C
+          </p> 
 
-        <p>
-        Wind speed:{" "}
-        {weatherData.properties.timeseries[0].data.instant.details.wind_speed}
-        m/s
-        </p>
+          <p> Humidity:{" "}
+          {details?.relative_humidity}
+          %
+          </p>
 
-        <p>
-        Wind direction:{" "}
-        {weatherData.properties.timeseries[0].data.instant.details.wind_from_direction}
-        °
-        </p>
+          <p>
+          Wind speed:{" "}
+          {details?.wind_speed}
+          m/s
+          </p>
 
-      </>
-      ) : (
-        <p>loading weather...</p>)
-      }
+          <p>
+          Wind direction:{" "}
+          {details?.wind_from_direction}
+          °
+          <Arrow direction={details?.wind_from_direction} />
+          </p>
+
+        </>
+        ) : (
+          <p>loading weather...</p>) 
+        }
+        </div>
     </div>
   );
 }
