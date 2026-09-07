@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 function App() {
   const [weatherData, setWeatherData] = useState(null);
   const location = "Test location";
+  const details = weatherData?.properties?.timeseries[0]?.data?.instant?.details;
 
   useEffect(() => {
     getWeather().then(data => {
