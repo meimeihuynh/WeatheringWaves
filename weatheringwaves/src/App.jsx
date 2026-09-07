@@ -2,8 +2,7 @@
 import { getWeather } from './weatherapi.js';
 import { useEffect, useState } from 'react';
 import Arrow from './components/arrow.jsx';
-import skybg from './assets/skyvideo.mp4';
-import skybackground from './components/video.jsx';
+import VideoBackground from './components/video.jsx';
 
 
 
@@ -23,9 +22,11 @@ function App() {
   return (
   
 
-    <div>
-        <skybackground />
-        <h1>WeatheringWaves</h1>
+    <main className="app-shell">
+      <VideoBackground />
+      <div className="content">
+      <p className="eyebrow">Live conditions</p>
+      <h1>WeatheringWaves</h1>
         <h1 className="undertext">Check your weather</h1>
   
         <div className="location-box">
@@ -61,7 +62,8 @@ function App() {
           <p>loading weather...</p>) 
         }
         </div>
-    </div>
+        </div>
+    </main>
   );
 }
 

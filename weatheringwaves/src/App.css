@@ -1,60 +1,128 @@
-.wind-arrow {
-    font-size: 40px;
-    width: 50px;
-    height: 50px;
-    transform: rotateX(180deg) rotateY(180deg);
+:root {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #f7fbff;
+    background: #112b3c;
 }
 
-.background {
-    background-image: url('./assets/skyvideo.mp4');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+}
+
+.app-shell {
+    position: relative;
+    min-height: 100vh;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(2rem, 7vw, 6rem) 1.25rem;
+    background: linear-gradient(135deg, rgba(8, 35, 52, 0.76), rgba(27, 77, 94, 0.42));
+}
+
+.video-container {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    background: #112b3c;
+}
+
+.video-container::after {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(4, 22, 32, 0.2);
+    content: '';
+}
+
+.background-video {
     width: 100%;
     height: 100%;
-    z-index: -1;
+    object-fit: cover;
+    opacity: 0.8;
 }
 
+.content {
+    position: relative;
+    width: min(100%, 680px);
+    margin: 0 auto;
+    text-align: center;
+}
 
+.eyebrow {
+    margin: 0 0 0.75rem;
+    color: #d7f3f4;
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
 
 h1 {
-    font-size: 2.5rem;
-    font-family: 'Arial', sans-serif;
-
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-h2 {
-    font-size: 2rem;
-    font-family: 'Arial', sans-serif;
-
-    position: relative;
-    display: flex;
-    justify-content: center; 
-}
-
-p {
-    font-size: 1.5rem;
-    font-family: 'Arial', sans-serif;
-    color: #555;
+    margin: 0;
+    font-size: clamp(2.8rem, 9vw, 5.75rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
 }
 
 .undertext {
-    font-size: 1.5rem;
-    font-family: 'Arial', sans-serif;
-    color: #555;
+    margin: 1rem 0 2.5rem;
+    color: #d7f3f4;
+    font-family: Arial, sans-serif;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
 }
 
 .location-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    overflow: hidden;
+    border: 1px solid rgba(231, 250, 252, 0.35);
+    border-radius: 18px;
+    background: rgba(231, 250, 252, 0.3);
+    box-shadow: 0 1.5rem 4rem rgba(2, 20, 31, 0.28);
+    backdrop-filter: blur(12px);
+}
 
-    border: 3px solid #97a1ff;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    
+.location-box h2,
+.location-box > p:first-of-type {
+    grid-column: 1 / -1;
+}
+
+h2,
+p {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    padding: 1.4rem 1rem 0.35rem;
+    font-size: 1.55rem;
+}
+
+.location-box p {
+    padding: 1.25rem 0.75rem;
+    background: rgba(6, 31, 44, 0.48);
+    color: #f7fbff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.location-box p:not(:first-of-type) {
+    color: #d7f3f4;
+}
+
+.wind-arrow {
+    display: inline-block;
+    margin-left: 0.35rem;
+    color: #f4c95d;
+    font-size: 1.5rem;
+    line-height: 0.5;
 }

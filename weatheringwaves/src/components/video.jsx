@@ -1,7 +1,7 @@
 import "../App.css"
 import sky from "../assets/skyvideo.mp4"
 
-function skybackground() {
+function VideoBackground() {
     return(
         <div className="video-container">
             <video 
@@ -18,4 +18,4 @@ function skybackground() {
 
 }
 
-export default skybackground
+export default VideoBackground
