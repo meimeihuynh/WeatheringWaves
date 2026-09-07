@@ -22,6 +22,8 @@ WeatheringWaves er en vær nettside med data fra API.
 
 ## Teknologier
 
+Jeg har valgt disse teknologiene fordi at jeg vil utvikle meg med disse og kunne bruke flere andre teknologier i sammenheng.
+
 - React
 - Vite
 - JavaScript
@@ -178,6 +180,20 @@ Komponenten mottar vindretningen som en propell:
 Jeg importerer komponenten i App.jsx og setter den i koden.
 
     <WindArrow direction={details?.wind_from_direction} />
+
+- ### Testing og Feilsøking
+
+Før jeg koblet API-et til React-prosjektet, testet jeg API-endepunktet separat i nettleseren. Dette gjorde jeg for å se hvilken type data API-et returnerte og for å finne ut hvor i JSON-strukturen informasjonen jeg trengte lå.
+
+Jeg testet også API-et med fetch() og response.json() for å kontrollere at dataene kunne hentes og brukes i JavaScript.
+
+- Testet API-endepunktet direkte i nettleseren.
+- Testet API-data med fetch() og console.log().
+- Undersøkte JSON-strukturen for å finne riktige værverdier.
+- Testet loading-melding før API-dataene ble lastet inn.
+- Testet at værdata og område ble vist riktig.
+
+- ### Forbedringer
 
 
 # Videre utvikling
