@@ -2,6 +2,10 @@
 import { getWeather } from './weatherapi.js';
 import { useEffect, useState } from 'react';
 import Arrow from './components/arrow.jsx';
+import skybg from './assets/skyvideo.mp4';
+import skybackground from './components/video.jsx';
+
+
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -17,11 +21,13 @@ function App() {
 
 
   return (
+  
 
     <div>
+        <skybackground />
         <h1>WeatheringWaves</h1>
         <h1 className="undertext">Check your weather</h1>
-
+  
         <div className="location-box">
           <h2>{location}</h2>
 
@@ -47,7 +53,7 @@ function App() {
           Wind direction:{" "}
           {details?.wind_from_direction}
           °
-          <Arrow direction={details?.wind_from_direction} />
+          <Arrow direction={(details?.wind_from_direction + 180) % 360} />
           </p>
 
         </>

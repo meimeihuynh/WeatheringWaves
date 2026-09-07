@@ -2,7 +2,20 @@
     font-size: 40px;
     width: 50px;
     height: 50px;
+    transform: rotateX(180deg) rotateY(180deg);
 }
+
+.background {
+    background-image: url('./assets/skyvideo.mp4');
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
 
 h1 {
     font-size: 2.5rem;
